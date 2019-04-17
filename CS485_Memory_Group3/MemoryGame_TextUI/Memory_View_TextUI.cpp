@@ -16,11 +16,27 @@ Memory_View_TextUI::~Memory_View_TextUI()
 
 void Memory_View_TextUI::onSetPlayer1Name(std::string name)
 {
-	mpcPresenter;
+	mpcPresenter->setPlayer1Name(name);
 }
 
 void Memory_View_TextUI::onSetPlayer2Name(std::string name)
 {
+	mpcPresenter->setPlayer2Name(name);
+}
+
+void Memory_View_TextUI::onFlip(int x, int y)
+{
+	mpcPresenter->flip(x, y);
+}
+
+void Memory_View_TextUI::onNextTurn()
+{
+	mpcPresenter->nextTurn();
+}
+
+void Memory_View_TextUI::setPlayer1Name(std::string name)
+{
+
 }
 
 

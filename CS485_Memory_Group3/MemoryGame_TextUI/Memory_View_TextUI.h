@@ -28,7 +28,7 @@ public:
 	//funcs to call to presenter
 	void onSetPlayer1Name(std::string name);
 	void onSetPlayer2Name(std::string name);
-	void onFlip(int, int);
+	void onFlip(int x, int y);
 	void onNextTurn();
 
 	//funcs called by presenter
