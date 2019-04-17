@@ -140,6 +140,9 @@
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="IMemory_Presenter.h" />
+    <ClInclude Include="IMemory_View.h" />
+    <ClInclude Include="Memory_Presenter.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
@@ -149,6 +152,7 @@
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Memory_Presenter.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
