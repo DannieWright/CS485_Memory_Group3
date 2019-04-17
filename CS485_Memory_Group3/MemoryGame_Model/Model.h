@@ -23,9 +23,10 @@ public:
   bool isWinner () const;
   std::string getCurrentPlayerName () const;
   int getCurrentPlayerScore () const;
-  int getLastPlayerScore () const;
+  bool getPlayerScore (std::size_t index, int &rScore) const;
 
   void setPlayerName (std::size_t index, std::string name);
+  bool getPlayerName (std::size_t index, std::string &rszName) const;
 
   //bool makeMove (int x1, int y1, int x2, int y2);
 

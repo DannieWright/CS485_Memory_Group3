@@ -96,7 +96,7 @@ int Model::getCurrentPlayerScore () const
 }
 
 //***************************************************************************
-// Function:    getLastPlayerScore
+// Function:    getPlayerScore
 //
 // Description: Get the lasty player's score
 //
@@ -104,8 +104,12 @@ int Model::getCurrentPlayerScore () const
 //
 // Returned:    int - the score
 //***************************************************************************
-int Model::getLastPlayerScore () const {
-  return mcVecPlayers[(mCurrentTurn + 1) % 2].getScore ();
+bool Model::getPlayerScore (std::size_t index, int &rScore) const {
+  if (index < mcVecPlayers.size () && index >= 0) {
+    rScore = mcVecPlayers[index].getScore ();
+    return true;
+  }
+  return false;
 }
 
 //***************************************************************************
@@ -128,6 +132,15 @@ void Model::setPlayerName (std::size_t index, std::string name)
   {
     mcVecPlayers[index].setName (name);
   }
+}
+
+
+bool Model::getPlayerName (std::size_t index, std::string &rszName) const {
+  if (index < mcVecPlayers.size () && index >= 0) {
+    rszName = mcVecPlayers[index].getName ();
+    return true;
+  }
+  return false;
 }
 
 //***************************************************************************
