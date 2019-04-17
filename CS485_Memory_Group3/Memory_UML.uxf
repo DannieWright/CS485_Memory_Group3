@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+// fontsize=14
+fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>84</y>
+      <w>329</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>TextUI
+--
+-struct compare
+-mWidgets : map&lt;pair&lt;int,int&gt;,ITextUIWidget*&gt;
+-mrcOut : ostream&amp;
+-mrcIn : istream&amp;
+-mEventMap : map&lt;string, function&lt;void(string)&gt;
+--
++TextUI(ostream&amp;, istream&amp;)
++~TextUI()
+
++addWidget(int, int, ITextUIWidget*) : void
++drawScreen() : void
++clearScreen() : void
++displayEventMentu() : void
++UIEventLoop() : void
+registerEvent(string, function&lt;void(string)&gt;) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>84</y>
+      <w>175</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>ITextUIWidget
+--
+--
+/+~ITextUIWidget()/
+
+/+setData(string) = 0 : void/
+/+getData() = 0 : string/
+
+/+setLabel(string) = 0 : void/
+/+getLabel() = 0 : string/
+
+/+draw(ostream&amp;) = 0 : void/
+/+getLength() = 0 : int/
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1106</x>
+      <y>287</y>
+      <w>196</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>TextUITextWidget
+--
+-mData : string
+-mLable : string
+--
+TextUITextWidget(string, string)
+/+~TextUITextWidget()/
+
+/+setData(string) : void/
+/+getData() : string/
+
+/+setLabel(string) : void/
+/+getLabel() : string/
+
+/+draw(ostream&amp;) : void/
+/+getLength() : int/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1162</x>
+      <y>245</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>994</x>
+      <y>105</y>
+      <w>140</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>889</x>
+      <y>623</y>
+      <w>224</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>Board
+--
++BOARD_SIZE : int
+-macCards[][] : Card
+-maFixed[][] : bool
+-USED_CARD : int &lt;&lt;static&gt;&gt;
+--
++Board(int, bool)
+
++flip(int ,int ) : bool
++putFaceDown(int,int) : void
+
++match(int, int, int, int) : bool
+
++replace(int,int) : void
+
++isBoardDone() : bool
+
++getCard(int, int) : std::string
++setFixed(int,int) : void
++legalFlip(int, int) : bool
++reset() : bool
+
+-setUpBoard(int, bool) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>609</x>
+      <y>630</y>
+      <w>210</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>Card
+--
+-mFaceValue : int
+-mbFaceUp : bool
+--
++Card(int)
+
++getValue() : int
++to_string() : std::string
+
++flip() : void
++putFaceDown() : void
++isFaceUp() : bool
++operator==(Card&amp;) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>672</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1106</x>
+      <y>595</y>
+      <w>112</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1204</x>
+      <y>546</y>
+      <w>287</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+-mpcBoard : Board
+-mcVecPlayers : std::vector&lt;Player&gt;
+-mCurrentTurn : int
+-NOT_FLIPPED : int &lt;&lt;static&gt;&gt;
+-mLastX1 : int
+-mLastY1 : int
+-mLastX2 : int
+-mLastY2 : int 
+--
++Model(int)
++~Model()
+
++isBoardDone() : bool
++isWinner() : bool
++getCurrentPlayerName() : std::string
++getCurrentPlayerScore() : int
++getLastPlayerScore(): int
+
++setPlayerName(std::size_t, std::string): void
+
++flip(int,int) : bool
++legalMove(int,int) : bool
+
++resetGame() : void
++advanceTurn() : void
+
++getCard(int, int) : std::string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1001</x>
+      <y>567</y>
+      <w>217</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>833</x>
+      <y>406</y>
+      <w>203</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-mcName : std::string
+-mScore : int
+--
+
++Player()
++Player(std::string)
+
++setName(std::string) : void
++getName() :std::string
+
++getScore() : int
++incrementScore() : void
++resetScore() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>364</x>
+      <y>91</y>
+      <w>252</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>IMemory_View
+--
+/+~Imemory_View()/
+
+//funcs to call to presenter
+/+onSetPlayer1Name(std::string)=0:void/
+/+onSetPlayer2Name(std::string)=0:void/
+/+onFlip(int,int)=0:void/
+/+onNextTurn()=0:void/
+
+//funcs called by presenter
+/+setPlayer1Name(std::string)=0:void/
+/+setPlayer2Name(std::string)=0:void/
+/+setPlayer1Turn()=0:void/
+/+setPlayer2Turn()=0:void/
+/+setPlayer1Score()=0:void/
+/+setPlayer2Score()=0:void/
+/+setCard(int,int,string)=0:void/
+/+redraw()=0:void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>721</y>
+      <w>238</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Memory_Presenter
+--
+-mpcView: IMemory_View*
+-mpcModel: Model*
+--
++Memory_Presenter(IMemory_View*,Model*)
++~Memory_Presenter()
+
+//funcs called by view
+/+setPlayer1Name(string):void/
+/+setPlayer2Name(string):void/
+/+flip(int,int):void/
+/+nextTurn():void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>329</y>
+      <w>245</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Memory_View_TextUI
+--
+-mpcPresenter: IMemory_Presenter*
+--
++Memory_View_TextUI(IMemory_Presenter*)
++~Memory_View_TextUI()
+
+//funcs to call to presenter
+/+onSetPlayer1Name(std::string):void/
+/+onSetPlayer2Name(std::string):void/
+/+onFlip(int,int):void/
+/+onNextTurn():void/
+
+//funcs called by presenter
+/+setPlayer1Name(std::string):void/
+/+setPlayer2Name(std::string):void/
+/+setPlayer1Turn():void/
+/+setPlayer2Turn():void/
+/+setPlayer1Score():void/
+/+setPlayer2Score():void/
+/+setCard(int,int,string):void/
+/+redraw():void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>266</y>
+      <w>112</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>266</y>
+      <w>105</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>602</y>
+      <w>189</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>IMemory_Presenter
+--
+/+~Imemory_Presenter()/
+
+//funcs called by view
+/+setPlayer1Name(string)=0:void/
+/+setPlayer2Name(string)=0:void/
+/+flip(int,int)=0:void/
+/+nextTurn()=0:void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>686</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>266</y>
+      <w>21</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>651</y>
+      <w>700</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>980.0;320.0;90.0;310.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

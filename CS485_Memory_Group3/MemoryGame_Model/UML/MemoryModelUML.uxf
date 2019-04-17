@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>688</x>
+      <y>64</y>
+      <w>384</w>
+      <h>448</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-mcName : std::string
+-mScore : int
+--
+
++Player()
++Player(std::string)
+
++setName(std::string) : void
++getName() :std::string
+
++getScore() : int
++incrementScore() : void
++resetScore() : void
+
+-notify() :void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>576</y>
+      <w>336</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>Card
+--
+-mFaceValue : int
+-mbFaceUp : bool
+--
++Card(int)
+
++getValue() : int
++to_string() : std::string
+
++flip() : void
++putFaceDown() : void
++isFaceUp() : bool
++operator==(Card&amp;) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>592</y>
+      <w>320</w>
+      <h>688</h>
+    </coordinates>
+    <panel_attributes>Board
+--
++BOARD_SIZE : int
+-macCards[][] : Card
+-maFixed[][] : bool
+-USED_CARD : int &lt;&lt;static&gt;&gt;
+--
++Board(int, bool)
+
++flip(int ,int ) : bool
++putFaceDown(int,int) : void
+
++match(int, int, int, int) : bool
+
++replace(int,int) : void
+
++isBoardDone() : bool
+
++getCard(int, int) : std::string
++setFixed(int,int) : void
++legalFlip(int, int) : bool
++reset() : bool
+
+-notify(int,int) : void
+
+-setUpBoard(int, bool) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>544</y>
+      <w>656</w>
+      <h>832</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+-mpcBoard : Board
+-mcVecPlayers : std::vector&lt;Player&gt;
+-mCurrentTurn : int
+-NOT_FLIPPED : int &lt;&lt;static&gt;&gt;
+-mLastX1 : int
+-mLastY1 : int
+-mLastX2 : int
+-mLastY2 : int 
+--
++Model(int)
++~Model()
+
++isBoardDone() : bool
++isWinner() : bool
++getCurrentPlayerName() : std::string
++getCurrentPlayerScore() : int
+
++setPlayerName(std::size_t, std::string): void
+
++flip(int,int) : bool
++legalMove(int,int) : bool
+
++resetGame() : void
++advanceTurn() : void
+
++getCard(int, int) : std::string
+
++setPlayerObserver(int, IObserver*): void
++setBoardObserver(IObserver*) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>656</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>992</x>
+      <y>496</y>
+      <w>208</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>704</y>
+      <w>208</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
