@@ -1,23 +1,3 @@
-//IMemory_View
-//--
-/// +~Imemory_View ()/
-//
-////funcs to call to presenter
-///+onSetPlayer1Name (std::string) = 0:void/
-///+onSetPlayer2Name (std::string) = 0 : void/
-///+onFlip (int, int) = 0 : void/
-///+onNextTurn () = 0 : void/
-//
-////funcs called by presenter
-///+setPlayer1Name (std::string) = 0 : void/
-///+setPlayer2Name (std::string) = 0 : void/
-///+setPlayer1Turn () = 0 : void/
-///+setPlayer2Turn () = 0 : void/
-///+setPlayer1Score () = 0 : void/
-///+setPlayer2Score () = 0 : void/
-///+setCard (int, int, string) = 0 : void/
-///+redraw () = 0 : void /
-
 #pragma once
 #include <string>
 
