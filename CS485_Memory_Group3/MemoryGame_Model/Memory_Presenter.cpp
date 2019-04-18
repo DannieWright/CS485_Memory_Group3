@@ -1,7 +1,23 @@
+//***************************************************************************
+// File name:    Memory_Presenter.cpp
+// Author:     
+// Date:         4/19/19
+// Class:        CS485
+// Assignment:   Memory Game
+// Purpose:      Practice with MVP
+//***************************************************************************
+
 #include "Memory_Presenter.h"
 
-
-
+//***************************************************************************
+// Constructor:  Memory_Presenter
+//
+// Description:  Initialize the Memory_Presenter with a view
+//
+// Parameters:   pcView - the view
+//
+// Returned:     None
+//***************************************************************************
 Memory_Presenter::Memory_Presenter (IMemory_View *pcView) {
 
   mpcView = pcView;
