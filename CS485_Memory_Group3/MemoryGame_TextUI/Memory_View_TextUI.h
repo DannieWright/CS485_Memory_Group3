@@ -38,7 +38,7 @@ public:
 	void setPlayer2Turn();
 	void setPlayer1Score();
 	void setPlayer2Score();
-	void setCard(int , int , std::string );
+	void setCard(int x, int y, std::string name);
 	void redraw();
 
 private:

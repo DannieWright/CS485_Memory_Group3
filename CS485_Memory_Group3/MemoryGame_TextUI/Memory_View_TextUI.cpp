@@ -39,4 +39,32 @@ void Memory_View_TextUI::setPlayer1Name(std::string name)
 
 }
 
+void Memory_View_TextUI::setPlayer2Name(std::string name)
+{
+}
+
+void Memory_View_TextUI::setPlayer1Turn()
+{
+}
+
+void Memory_View_TextUI::setPlayer2Turn()
+{
+}
+
+void Memory_View_TextUI::setPlayer1Score()
+{
+}
+
+void Memory_View_TextUI::setPlayer2Score()
+{
+}
+
+void Memory_View_TextUI::setCard(int, int, std::string)
+{
+}
+
+void Memory_View_TextUI::redraw()
+{
+}
+
 
