@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="IMemory_View.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
