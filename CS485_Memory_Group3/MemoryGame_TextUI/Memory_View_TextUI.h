@@ -12,24 +12,22 @@
 #include <iostream>
 #include <map>
 #include <functional>
-
+#include "TextUITextWidget.h"
 #include "../TextUI/TextUI.h"
-
-class IMemory_View;
-class IMemory_Presenter;
+#include "IMemory_View.h"
 
 class Memory_View_TextUI : public IMemory_View, TextUI
 {
 public:
-	Memory_View_TextUI(IMemory_Presenter* pcPresenter);	
+	Memory_View_TextUI();	
 	virtual ~Memory_View_TextUI();
 
 
 	//funcs to call to presenter
 	void onSetPlayer1Name(std::string name);
 	void onSetPlayer2Name(std::string name);
-	void onFlip(int x, int y);
-	void onNextTurn();
+	void onFlip(std::string xy);
+	void onNextTurn(std::string);
 
 	//funcs called by presenter
 	void setPlayer1Name(std::string name);
@@ -43,4 +41,9 @@ public:
 
 private:
 	IMemory_Presenter *	mpcPresenter = nullptr;
+  //TextBoardView macBoard;
+
+  TextUITextWidget *mpPlayer1Name;
+  TextUITextWidget *mpPlayer2Name;
+
 };

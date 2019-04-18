@@ -80,7 +80,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\wri94711\Downloads\cs485_memorygame_starter-master\cs485_memorygame_starter-master\MemoryGame_Model\Debug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\forbe\source\repos\CS485_Memory_Group3\CS485_Memory_Group3\MemoryGame_TextUI;C:\Users\wri94711\Downloads\cs485_memorygame_starter-master\cs485_memorygame_starter-master\MemoryGame_Model\Debug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,6 +140,8 @@
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="IMemory_Presenter.h" />
+    <ClInclude Include="IMemory_View.h" />
     <ClInclude Include="Memory_Presenter.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Player.h" />

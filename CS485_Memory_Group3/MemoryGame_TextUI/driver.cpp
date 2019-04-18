@@ -1,7 +1,7 @@
 #include <iostream>
+#include "Memory_View_TextUI.h"
 
 int main ()
 {
-  std::cout << " HELLO WORLD" << std::endl;
-  return 0;
+  Memory_View_TextUI cView;
 }

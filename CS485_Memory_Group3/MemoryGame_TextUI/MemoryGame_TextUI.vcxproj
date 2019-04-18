@@ -79,6 +79,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\forbe\source\repos\CS485_Memory_Group3\CS485_Memory_Group3\MemoryGame_Model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>TextUI.lib;MemoryGame_Model.lib;12_ObserverExample.lib;%(AdditionalDependencies)</AdditionalDependencies>

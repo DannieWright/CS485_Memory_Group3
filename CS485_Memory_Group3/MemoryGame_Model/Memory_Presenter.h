@@ -1,13 +1,15 @@
 #pragma once
 #include <string>
 #include "Model.h"
-
+#include "IMemory_Presenter.h"
+#include "IMemory_View.h"
 class IMemory_View;
 
-class Memory_Presenter
+class Memory_Presenter : public IMemory_Presenter
 {
 public:
-  Memory_Presenter (IMemory_View* pcView, Model* pcModel);
+  //changed to not have model in constructor
+  Memory_Presenter (IMemory_View* pcView);
   ~Memory_Presenter ();
   
   virtual void setPlayer1Name (std::string szName);
