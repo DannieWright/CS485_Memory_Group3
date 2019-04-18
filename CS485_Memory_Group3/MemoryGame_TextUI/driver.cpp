@@ -4,4 +4,8 @@
 int main ()
 {
   Memory_View_TextUI cView;
+
+  cView.UIEventLoop ();
+
+  return EXIT_SUCCESS;
 }

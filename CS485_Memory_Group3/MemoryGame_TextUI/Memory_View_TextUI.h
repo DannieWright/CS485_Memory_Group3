@@ -12,11 +12,14 @@
 #include <iostream>
 #include <map>
 #include <functional>
+#include <vector>
 #include "TextUITextWidget.h"
 #include "../TextUI/TextUI.h"
+#include "TextUI.h"
 #include "IMemory_View.h"
+#include "IMemory_Presenter.h"
 
-class Memory_View_TextUI : public IMemory_View, TextUI
+class Memory_View_TextUI : public IMemory_View, public TextUI
 {
 public:
 	Memory_View_TextUI();	
@@ -34,16 +37,20 @@ public:
 	void setPlayer2Name(std::string name);
 	void setPlayer1Turn();
 	void setPlayer2Turn();
-	void setPlayer1Score();
-	void setPlayer2Score();
+	void setPlayer1Score(int score);
+	void setPlayer2Score(int score);
 	void setCard(int x, int y, std::string name);
 	void redraw();
 
 private:
-	IMemory_Presenter *	mpcPresenter = nullptr;
+	IMemory_Presenter *mpcPresenter = nullptr;
   //TextBoardView macBoard;
 
   TextUITextWidget *mpPlayer1Name;
   TextUITextWidget *mpPlayer2Name;
+  TextUITextWidget *mpPlayer1Score;
+  TextUITextWidget *mpPlayer2Score;
+  static const int BOARD_SIZE = 4;
+  TextUITextWidget *mapBoard[BOARD_SIZE][BOARD_SIZE];
 
 };

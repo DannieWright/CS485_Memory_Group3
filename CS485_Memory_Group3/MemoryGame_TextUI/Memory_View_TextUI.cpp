@@ -13,19 +13,24 @@ Memory_View_TextUI::Memory_View_TextUI () : TextUI (std::cout, std::cin)
 
   mpPlayer1Name = new TextUITextWidget ("Player1", "");
   mpPlayer2Name = new TextUITextWidget ("Player2", "");
+  mpPlayer1Score = new TextUITextWidget ("Score", "");
+  mpPlayer2Score = new TextUITextWidget ("Score", "");
   //mpWinnerName = new TextUITextWidget ("", "");
 
   addWidget (2, 3, mpPlayer1Name);
+  addWidget (2, 4, mpPlayer1Score);
+
   addWidget (20, 3, mpPlayer2Name);
+  addWidget (20, 4, mpPlayer2Score);
   //addWidget (10, 4, mpWinnerName);
 
-  for (int x = 0; x < 3; x++)
+  for (int x = 0; x < 4; x++)
   {
-    for (int y = 0; y < 3; y++)
+    for (int y = 0; y < 4; y++)
     {
-      pcWidget = new TextUITextWidget ("", "_");
+      pcWidget = new TextUITextWidget ("", "#");
       addWidget (x + 10, y + 10, pcWidget);
-      //macBoard.setWidget (x, y, pcWidget);
+      mapBoard[x][y] = pcWidget;
     }
   }
   registerEvent ("FLIP", 
@@ -45,8 +50,8 @@ Memory_View_TextUI::Memory_View_TextUI () : TextUI (std::cout, std::cin)
     std::bind
     (&Memory_View_TextUI::onSetPlayer2Name, this, std::placeholders::_1));
 
-  onSetPlayer1Name ("Player 1");
-  onSetPlayer2Name ("Player 2");
+  onSetPlayer1Name ("Chadd");
+  onSetPlayer2Name ("Computer");
 }
 
 Memory_View_TextUI::~Memory_View_TextUI ()
@@ -66,46 +71,66 @@ void Memory_View_TextUI::onSetPlayer2Name(std::string name)
 
 void Memory_View_TextUI::onFlip(std::string xy)
 {
-	//mpcPresenter->flip(x, y);
+  int x, y;
+  std::istringstream cStringStream (xy);
+  if (cStringStream >> x)
+  {
+    if (cStringStream >> y)
+    {
+      mpcPresenter->flip (x, y);
+    }
+  }
 }
 
 void Memory_View_TextUI::onNextTurn(std::string)
 {
 	mpcPresenter->nextTurn();
+  for (int i = 0; i < 4; i++)
+  {
+    for (int k = 0; k < 4; k++)
+    {
+      mapBoard[i][k]->setData ("#");
+    }
+  }
 }
 
 void Memory_View_TextUI::setPlayer1Name(std::string name)
 {
-  
+  mpPlayer1Name->setData (name);
 }
 
 void Memory_View_TextUI::setPlayer2Name(std::string name)
 {
+  mpPlayer2Name->setData (name);
 }
 
 void Memory_View_TextUI::setPlayer1Turn()
 {
+
 }
 
 void Memory_View_TextUI::setPlayer2Turn()
 {
 }
 
-void Memory_View_TextUI::setPlayer1Score()
+void Memory_View_TextUI::setPlayer1Score(int score)
 {
-  
+  mpPlayer1Score->setData (std::to_string (score));
 }
 
-void Memory_View_TextUI::setPlayer2Score()
+void Memory_View_TextUI::setPlayer2Score(int score)
 {
+  mpPlayer2Score->setData (std::to_string (score));
 }
 
-void Memory_View_TextUI::setCard(int, int, std::string)
+void Memory_View_TextUI::setCard(int x, int y, std::string string)
 {
+  mapBoard[x][y]->setData (string);
 }
 
 void Memory_View_TextUI::redraw()
 {
+  drawScreen ();
 }
 
 

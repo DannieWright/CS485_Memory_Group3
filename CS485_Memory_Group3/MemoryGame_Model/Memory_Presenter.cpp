@@ -2,10 +2,11 @@
 
 
 
-Memory_Presenter::Memory_Presenter (IMemory_View *pcView, Model *pcModel) {
+Memory_Presenter::Memory_Presenter (IMemory_View *pcView) {
 
   mpcView = pcView;
-  mpcModel = pcModel;
+  mpcModel = new Model;
+
 }
 
 
@@ -23,7 +24,7 @@ void Memory_Presenter::setPlayer1Name (std::string szName) {
 void Memory_Presenter::setPlayer2Name (std::string szName) {
   mpcModel->setPlayerName (1, szName);
   mpcModel->getPlayerName (1, szName);
-  mpcView->setPlayer1Name (szName);
+  mpcView->setPlayer2Name (szName);
 }
 
 void Memory_Presenter::flip (int x, int y) {
