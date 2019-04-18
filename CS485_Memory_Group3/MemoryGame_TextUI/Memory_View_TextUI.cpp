@@ -26,6 +26,10 @@ Memory_View_TextUI::Memory_View_TextUI () : TextUI (std::cout, std::cin)
 
   for (int x = 0; x < 4; x++)
   {
+    pcWidget = new TextUITextWidget ("", std::to_string (x));
+    addWidget (x + 10, 8, pcWidget);
+    pcWidget = new TextUITextWidget ("", std::to_string (x));
+    addWidget (7, x + 10, pcWidget);
     for (int y = 0; y < 4; y++)
     {
       pcWidget = new TextUITextWidget ("", "#");
