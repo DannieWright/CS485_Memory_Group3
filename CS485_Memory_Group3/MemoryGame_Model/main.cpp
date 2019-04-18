@@ -36,7 +36,7 @@ int main ()
 
     std::cin >> x1 >> y1 >> x2 >> y2;
 
-    cTheModel.flip (x1, y1);
+    cTheModel.flip (x1, y1); 
     
     cTheModel.flip(x2, y2);
 
