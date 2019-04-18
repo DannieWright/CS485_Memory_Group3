@@ -1,10 +1,10 @@
 //***************************************************************************
-// File name:  IMemory_Presenter.h
+// File name:    IMemory_Presenter.h
 // Author:     
-// Date:       4/19
-// Class:      CS485
-// Assignment: Memory Game
-// Purpose:    Practice with MVP
+// Date:         4/19/19
+// Class:        CS485
+// Assignment:   Memory Game
+// Purpose:      Practice with MVP
 //***************************************************************************
 
 #pragma once

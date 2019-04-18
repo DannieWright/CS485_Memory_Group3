@@ -1,3 +1,12 @@
+//***************************************************************************
+// File name:    Memory_View_TextUI.cpp
+// Author:     
+// Date:         4/19/19
+// Class:        CS485
+// Assignment:   Memory Game
+// Purpose:      Practice with MVP
+//***************************************************************************
+
 #include "Memory_View_TextUI.h"
 #include "../MemoryGame_Model/IMemory_Presenter.h"
 #include "../MemoryGame_Model/IMemory_View.h"
