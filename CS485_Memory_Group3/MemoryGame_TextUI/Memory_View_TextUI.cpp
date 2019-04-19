@@ -72,20 +72,20 @@ Memory_View_TextUI::~Memory_View_TextUI ()
 }
 
 
-void Memory_View_TextUI::onSetPlayer1Name(std::string name)
+void Memory_View_TextUI::onSetPlayer1Name(std::string szName)
 {
-	mpcPresenter->setPlayer1Name(name);
+	mpcPresenter->setPlayer1Name(szName);
 }
 
-void Memory_View_TextUI::onSetPlayer2Name(std::string name)
+void Memory_View_TextUI::onSetPlayer2Name(std::string szName)
 {
-	mpcPresenter->setPlayer2Name(name);
+	mpcPresenter->setPlayer2Name(szName);
 }
 
-void Memory_View_TextUI::onFlip(std::string xy)
+void Memory_View_TextUI::onFlip(std::string szXY)
 {
   int x, y;
-  std::istringstream cStringStream (xy);
+  std::istringstream cStringStream (szXY);
   if (cStringStream >> x)
   {
     if (cStringStream >> y)
@@ -107,14 +107,14 @@ void Memory_View_TextUI::onNextTurn(std::string)
   }
 }
 
-void Memory_View_TextUI::setPlayer1Name(std::string name)
+void Memory_View_TextUI::setPlayer1Name(std::string szName)
 {
-  mpPlayer1Name->setData (name);
+  mpPlayer1Name->setData (szName);
 }
 
-void Memory_View_TextUI::setPlayer2Name(std::string name)
+void Memory_View_TextUI::setPlayer2Name(std::string szName)
 {
-  mpPlayer2Name->setData (name);
+  mpPlayer2Name->setData (szName);
 }
 
 void Memory_View_TextUI::setPlayer1Turn()
@@ -136,9 +136,9 @@ void Memory_View_TextUI::setPlayer2Score(int score)
   mpPlayer2Score->setData (std::to_string (score));
 }
 
-void Memory_View_TextUI::setCard(int x, int y, std::string string)
+void Memory_View_TextUI::setCard(int x, int y, std::string szString)
 {
-  mapBoard[x][y]->setData (string);
+  mapBoard[x][y]->setData (szString);
 }
 
 void Memory_View_TextUI::redraw()

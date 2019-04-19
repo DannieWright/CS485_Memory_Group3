@@ -28,8 +28,8 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>84</y>
+      <x>658</x>
+      <y>0</y>
       <w>329</w>
       <h>196</h>
     </coordinates>
@@ -56,8 +56,8 @@ registerEvent(string, function&lt;void(string)&gt;) : void
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>84</y>
+      <x>1106</x>
+      <y>0</y>
       <w>175</w>
       <h>168</h>
     </coordinates>
@@ -82,8 +82,8 @@ registerEvent(string, function&lt;void(string)&gt;) : void
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1106</x>
-      <y>287</y>
+      <x>1092</x>
+      <y>203</y>
       <w>196</w>
       <h>203</h>
     </coordinates>
@@ -108,8 +108,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1162</x>
-      <y>245</y>
+      <x>1148</x>
+      <y>161</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -119,8 +119,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>994</x>
-      <y>105</y>
+      <x>980</x>
+      <y>21</y>
       <w>140</w>
       <h>21</h>
     </coordinates>
@@ -130,8 +130,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>889</x>
-      <y>623</y>
+      <x>875</x>
+      <y>539</y>
       <w>224</w>
       <h>238</h>
     </coordinates>
@@ -164,8 +164,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>609</x>
-      <y>630</y>
+      <x>595</x>
+      <y>546</y>
       <w>210</w>
       <h>189</h>
     </coordinates>
@@ -188,8 +188,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>812</x>
-      <y>672</y>
+      <x>798</x>
+      <y>588</y>
       <w>91</w>
       <h>35</h>
     </coordinates>
@@ -199,8 +199,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1106</x>
-      <y>595</y>
+      <x>1092</x>
+      <y>511</y>
       <w>112</w>
       <h>77</h>
     </coordinates>
@@ -210,8 +210,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1204</x>
-      <y>546</y>
+      <x>1190</x>
+      <y>462</y>
       <w>287</w>
       <h>364</h>
     </coordinates>
@@ -250,8 +250,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1001</x>
-      <y>567</y>
+      <x>987</x>
+      <y>483</y>
       <w>217</w>
       <h>42</h>
     </coordinates>
@@ -261,8 +261,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>833</x>
-      <y>406</y>
+      <x>819</x>
+      <y>322</y>
       <w>203</w>
       <h>189</h>
     </coordinates>
@@ -287,8 +287,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>364</x>
-      <y>91</y>
+      <x>350</x>
+      <y>7</y>
       <w>252</w>
       <h>182</h>
     </coordinates>
@@ -299,16 +299,16 @@ TextUITextWidget(string, string)
 //funcs to call to presenter
 /+onSetPlayer1Name(std::string)=0:void/
 /+onSetPlayer2Name(std::string)=0:void/
-/+onFlip(int,int)=0:void/
-/+onNextTurn()=0:void/
+/+onFlip(std::string)=0:void/
+/+onNextTurn(std::string)=0:void/
 
 //funcs called by presenter
 /+setPlayer1Name(std::string)=0:void/
 /+setPlayer2Name(std::string)=0:void/
 /+setPlayer1Turn()=0:void/
 /+setPlayer2Turn()=0:void/
-/+setPlayer1Score()=0:void/
-/+setPlayer2Score()=0:void/
+/+setPlayer1Score(int)=0:void/
+/+setPlayer2Score(int)=0:void/
 /+setCard(int,int,string)=0:void/
 /+redraw()=0:void/
 </panel_attributes>
@@ -317,8 +317,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>308</x>
-      <y>721</y>
+      <x>294</x>
+      <y>637</y>
       <w>238</w>
       <h>112</h>
     </coordinates>
@@ -340,14 +340,20 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>462</x>
-      <y>329</y>
+      <x>448</x>
+      <y>245</y>
       <w>245</w>
-      <h>210</h>
+      <h>245</h>
     </coordinates>
     <panel_attributes>Memory_View_TextUI
 --
 -mpcPresenter: IMemory_Presenter*
+-mpPlayer1Name: TextUIWidget*
+-mpPlayer2Name:TextUIWidget*
+-mpPlayer1Score:TextUIWidget*
+-mpPlayer2Score:TextUIWidget*
+-mpaBoard[][]:TextUIWidget*
+-BOARD_SIZE: const int &lt;&lt;static&gt;&gt;
 --
 +Memory_View_TextUI(IMemory_Presenter*)
 +~Memory_View_TextUI()
@@ -355,16 +361,16 @@ TextUITextWidget(string, string)
 //funcs to call to presenter
 /+onSetPlayer1Name(std::string):void/
 /+onSetPlayer2Name(std::string):void/
-/+onFlip(int,int):void/
-/+onNextTurn():void/
+/+onFlip(std::string):void/
+/+onNextTurn(std::string):void/
 
 //funcs called by presenter
 /+setPlayer1Name(std::string):void/
 /+setPlayer2Name(std::string):void/
 /+setPlayer1Turn():void/
 /+setPlayer2Turn():void/
-/+setPlayer1Score():void/
-/+setPlayer2Score():void/
+/+setPlayer1Score(int):void/
+/+setPlayer2Score(int):void/
 /+setCard(int,int,string):void/
 /+redraw():void/
 </panel_attributes>
@@ -373,8 +379,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>476</x>
-      <y>266</y>
+      <x>462</x>
+      <y>182</y>
       <w>112</w>
       <h>77</h>
     </coordinates>
@@ -384,8 +390,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>266</y>
+      <x>567</x>
+      <y>182</y>
       <w>105</w>
       <h>77</h>
     </coordinates>
@@ -395,8 +401,8 @@ TextUITextWidget(string, string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>602</y>
+      <x>322</x>
+      <y>518</y>
       <w>189</w>
       <h>91</h>
     </coordinates>
@@ -414,8 +420,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>686</y>
+      <x>406</x>
+      <y>602</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -425,8 +431,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>266</y>
+      <x>406</x>
+      <y>182</y>
       <w>21</w>
       <h>350</h>
     </coordinates>
@@ -436,8 +442,8 @@ TextUITextWidget(string, string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
-      <y>651</y>
+      <x>504</x>
+      <y>567</y>
       <w>700</w>
       <h>238</h>
     </coordinates>
