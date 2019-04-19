@@ -75,6 +75,8 @@ Memory_View_TextUI::Memory_View_TextUI () : TextUI (std::cout, std::cin)
 
   onSetPlayer1Name ("Chadd");
   onSetPlayer2Name ("Computer");
+  mpPlayer1Score->setData (std::to_string (0));
+  mpPlayer2Score->setData (std::to_string (0));
 }
 
 //***************************************************************************
@@ -152,12 +154,24 @@ void Memory_View_TextUI::onFlip (std::string szXY)
 //***************************************************************************
 void Memory_View_TextUI::onNextTurn (std::string)
 {
-	mpcPresenter->nextTurn ();
+  std::pair <int, int> cordinate1 = std::make_pair (-1, -1);
+  std::pair <int, int> cordinate2 = std::make_pair (-1, -1);
+  mpcPresenter->nextTurn (cordinate1, cordinate2);
+  if ((cordinate1.first != -1 && cordinate1.second != -1) &&
+    (cordinate2.first != -1 && cordinate2.second != -1))
+  {
+    mabFixed[cordinate1.first][cordinate1.second] = true;
+    mabFixed[cordinate2.first][cordinate2.second] = true;
+  }
+
   for (int i = 0; i < 4; i++)
   {
     for (int k = 0; k < 4; k++)
     {
-      mapBoard[i][k]->setData ("#");
+      if (!mabFixed[i][k])
+      {
+        mapBoard[i][k]->setData ("#");
+      }
     }
   }
 }

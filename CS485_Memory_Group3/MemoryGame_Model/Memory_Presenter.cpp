@@ -91,9 +91,10 @@ void Memory_Presenter::flip (int x, int y) {
 //
 // Returned:     None
 //***************************************************************************
-void Memory_Presenter::nextTurn () {
+void Memory_Presenter::nextTurn (std::pair <int, int> &cordinate1, 
+  std::pair <int, int> &cordinate2) {
   int score;
-  mpcModel->advanceTurn ();
+  mpcModel->advanceTurn (cordinate1, cordinate2);
   if (mpcModel->getPlayerScore (0, score)) {
     mpcView->setPlayer1Score (score);
   }

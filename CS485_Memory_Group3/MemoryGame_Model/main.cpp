@@ -45,7 +45,7 @@ int main ()
     std::cout << cTheModel.getCurrentPlayerName () << " ";
     std::cout << cTheModel.getCurrentPlayerScore ();
 
-    cTheModel.advanceTurn ();
+    //cTheModel.advanceTurn ();
     std::cout << "\n--------END--------------\n";
     system ("pause");
   }

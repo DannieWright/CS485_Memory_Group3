@@ -23,7 +23,8 @@ public:
   virtual void setPlayer1Name (std::string szName);
   virtual void setPlayer2Name (std::string szName);
   virtual void flip (int x, int y);
-  virtual void nextTurn ();
+  virtual void nextTurn (std::pair <int, int> &cordinate1, 
+    std::pair <int, int> &cordinate2);
 
 private:
   Model *mpcModel;

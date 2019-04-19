@@ -36,7 +36,8 @@ public:
 
   void resetGame ();
 
-  void advanceTurn ();
+  void advanceTurn (std::pair <int, int> &cordinate1, 
+    std::pair <int, int> &cordinate2);
 
   std::string getCard (int x, int y) const;
 

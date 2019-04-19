@@ -19,5 +19,6 @@ public:
 	virtual void setPlayer1Name (std::string namePlayer1) = 0;
 	virtual void setPlayer2Name (std::string namePlayer2) = 0;
 	virtual void flip (int x, int y) = 0;
-	virtual void nextTurn () = 0;
+	virtual void nextTurn (std::pair <int, int> &cordinate1,
+    std::pair <int, int> &cordinate2) = 0;
 };

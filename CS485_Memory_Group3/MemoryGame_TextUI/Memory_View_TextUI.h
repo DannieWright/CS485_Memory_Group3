@@ -44,7 +44,6 @@ public:
 
 private:
 	IMemory_Presenter *mpcPresenter = nullptr;
-  //TextBoardView macBoard;
 
   TextUITextWidget *mpPlayer1Name;
   TextUITextWidget *mpPlayer2Name;
@@ -52,5 +51,5 @@ private:
   TextUITextWidget *mpPlayer2Score;
   static const int BOARD_SIZE = 4;
   TextUITextWidget *mapBoard[BOARD_SIZE][BOARD_SIZE];
-
+  bool mabFixed[BOARD_SIZE][BOARD_SIZE];
 };

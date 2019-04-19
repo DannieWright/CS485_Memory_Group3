@@ -225,7 +225,8 @@ void Model::resetGame ()
 //
 // Returned:    None
 //***************************************************************************
-void Model::advanceTurn ()
+void Model::advanceTurn (std::pair <int, int> &cordinate1, 
+  std::pair <int, int> &cordinate2)
 {
   if (NOT_FLIPPED != mLastX1 && NOT_FLIPPED != mLastX2)
   {
@@ -240,6 +241,10 @@ void Model::advanceTurn ()
 
       mpcBoard->replace (mLastX1, mLastY1);
       mpcBoard->replace (mLastX2, mLastY2);
+      cordinate1.first = mLastX1;
+      cordinate1.second = mLastY1;
+      cordinate2.first = mLastX2;
+      cordinate2.second = mLastY2;
     }
     mLastX1 = NOT_FLIPPED;
     mLastY1 = NOT_FLIPPED;
