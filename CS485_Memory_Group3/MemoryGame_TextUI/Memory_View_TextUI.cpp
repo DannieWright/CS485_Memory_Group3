@@ -1,6 +1,6 @@
 //***************************************************************************
 // File name:    Memory_View_TextUI.cpp
-// Author:     
+// Author:       Group3
 // Date:         4/19/19
 // Class:        CS485
 // Assignment:   Memory Game
@@ -14,6 +14,16 @@
 #include "Memory_Presenter.h"
 #include <sstream>
 
+//***************************************************************************
+// Constructor:  Memory_View_TextUI
+//
+// Description:  Initialize the Memory_View_TextUI
+//
+// Parameters:   std::cout - ostream to the screen
+//               std::cin  - istream from the screen
+//
+// Returned:     None
+//***************************************************************************
 Memory_View_TextUI::Memory_View_TextUI () : TextUI (std::cout, std::cin)
 {
   TextUITextWidget *pcWidget;
@@ -67,22 +77,58 @@ Memory_View_TextUI::Memory_View_TextUI () : TextUI (std::cout, std::cin)
   onSetPlayer2Name ("Computer");
 }
 
+//***************************************************************************
+// Destructor:   Memory_View_TextUI     
+//
+// Description:  Deletes the Memory_View_TextUI
+//
+// Parameters:   None
+//
+// Returned:     None
+//***************************************************************************
 Memory_View_TextUI::~Memory_View_TextUI ()
 {
 }
 
-
-void Memory_View_TextUI::onSetPlayer1Name(std::string szName)
+//***************************************************************************
+// Function:     onSetPlayer1Name
+//
+// Description:  sets player 1 name
+//
+// Parameters:   szName - name of player 1
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::onSetPlayer1Name (std::string szName)
 {
-	mpcPresenter->setPlayer1Name(szName);
+	mpcPresenter->setPlayer1Name (szName);
 }
 
-void Memory_View_TextUI::onSetPlayer2Name(std::string szName)
+//***************************************************************************
+// Function:     onSetPlayer2Name
+//
+// Description:  sets player 2 name
+//
+// Parameters:   szName - name of player 2
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::onSetPlayer2Name (std::string szName)
 {
-	mpcPresenter->setPlayer2Name(szName);
+	mpcPresenter->setPlayer2Name (szName);
 }
 
-void Memory_View_TextUI::onFlip(std::string szXY)
+//***************************************************************************
+// Function:     onFlip
+//
+// Description:  gets the x and y coordinates when the current player wants
+//               to flip a card
+//
+// Parameters:   szXY - string that holds the x and y coordinates
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::onFlip (std::string szXY)
 {
   int x, y;
   std::istringstream cStringStream (szXY);
@@ -95,9 +141,18 @@ void Memory_View_TextUI::onFlip(std::string szXY)
   }
 }
 
-void Memory_View_TextUI::onNextTurn(std::string)
+//***************************************************************************
+// Function:     onNextTurn
+//
+// Description:  sets all the cards facedown after changing turns
+//
+// Parameters:   string - does nothing
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::onNextTurn (std::string)
 {
-	mpcPresenter->nextTurn();
+	mpcPresenter->nextTurn ();
   for (int i = 0; i < 4; i++)
   {
     for (int k = 0; k < 4; k++)
@@ -107,41 +162,114 @@ void Memory_View_TextUI::onNextTurn(std::string)
   }
 }
 
-void Memory_View_TextUI::setPlayer1Name(std::string szName)
+//***************************************************************************
+// Function:     setPlayer1Name
+//
+// Description:  sets player 1 name
+//
+// Parameters:   szName - name of player 1
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setPlayer1Name (std::string szName)
 {
   mpPlayer1Name->setData (szName);
 }
 
-void Memory_View_TextUI::setPlayer2Name(std::string szName)
+//***************************************************************************
+// Function:     setPlayer2Name
+//
+// Description:  sets player 2 name
+//
+// Parameters:   szName - name of player 2
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setPlayer2Name (std::string szName)
 {
   mpPlayer2Name->setData (szName);
 }
 
-void Memory_View_TextUI::setPlayer1Turn()
+//***************************************************************************
+// Function:     setPlayer1Turn
+//
+// Description:  sets the current turn to player 1
+//
+// Parameters:   None
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setPlayer1Turn ()
 {
-
 }
 
-void Memory_View_TextUI::setPlayer2Turn()
+//***************************************************************************
+// Function:     setPlayer2Turn
+//
+// Description:  sets the current turn to player 2
+//
+// Parameters:   None
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setPlayer2Turn ()
 {
 }
 
-void Memory_View_TextUI::setPlayer1Score(int score)
+//***************************************************************************
+// Function:     setPlayer1Score
+//
+// Description:  sets the score of player 1
+//
+// Parameters:   score - score of player 1
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setPlayer1Score (int score)
 {
   mpPlayer1Score->setData (std::to_string (score));
 }
 
-void Memory_View_TextUI::setPlayer2Score(int score)
+//***************************************************************************
+// Function:     setPlayer2Score
+//
+// Description:  sets the score of player 2
+//
+// Parameters:   score - score of player 2
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setPlayer2Score (int score)
 {
   mpPlayer2Score->setData (std::to_string (score));
 }
 
-void Memory_View_TextUI::setCard(int x, int y, std::string szString)
+//***************************************************************************
+// Function:     setCard
+//
+// Description:  sets the card 
+//
+// Parameters:   x        - x coordinate of the card
+//               y        - y coordinate of the card
+//               szString - data
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::setCard (int x, int y, std::string szString)
 {
   mapBoard[x][y]->setData (szString);
 }
 
-void Memory_View_TextUI::redraw()
+//***************************************************************************
+// Function:     redraw
+//
+// Description:  redraw the screen
+//
+// Parameters:   None
+//
+// Returned:     None
+//***************************************************************************
+void Memory_View_TextUI::redraw ()
 {
   drawScreen ();
 }

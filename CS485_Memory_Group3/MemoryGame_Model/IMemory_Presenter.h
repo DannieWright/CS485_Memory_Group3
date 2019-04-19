@@ -1,6 +1,6 @@
 //***************************************************************************
 // File name:    IMemory_Presenter.h
-// Author:     
+// Author:       Group3
 // Date:         4/19/19
 // Class:        CS485
 // Assignment:   Memory Game
@@ -14,7 +14,7 @@
 class IMemory_Presenter
 {
 public:
-	~IMemory_Presenter() {};
+	~IMemory_Presenter () {};
 
 	virtual void setPlayer1Name (std::string namePlayer1) = 0;
 	virtual void setPlayer2Name (std::string namePlayer2) = 0;
